@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Buy</th>
+                <th>Sell</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.stock }}</td>
+                    <td>{{ transaction.buy }}</td>
+                    <td>{{ transaction.sell }}</td>
+                    <td>{{ transaction.shares }}</td>
+                    <td>{{ transaction.price }}</td>
+                    <td>{{ transaction.time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Cash balance</th>
+                    <td>{{ cash }} </td>
+                <th>Total balance</th>
+                    <td>{{ cash }} + {{ total }}</td>
+            </tr>
+        <tfoot>
+    </table>
+{% endblock %}
