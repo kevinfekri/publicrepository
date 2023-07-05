@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Stocks</th>
+                <th>Shares</th>
+                <th>Current price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+            {% for row in rows %}
+                <tr>
+                    <td>{{ row.symbol }}</td>
+                    <td>{{ row.shares }}</td>
+                    <td>{{ row.price }}</td>
+                    <td>{{ row.shares}} * {{ price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Cash balance</th>
+                    <td>{{ cash }} </td>
+                <th>Total balance</th>
+                    <td>{{ cash }} + {{ total }}</td>
+            </tr>
+        <tfoot>
+    </table>
+{% endblock %}
